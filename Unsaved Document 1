@@ -1,0 +1,61 @@
+u = Sum ci.xi
+v = (1/sqrt(N)) Sum |xi>
+Sum ci^2 = 1, xi in Sigma n
+
+  = ci Sum xi {xi in S1} + ci xi {xi in S2} + Sum ci xi {xi in S0}
+G|u> = (2vv - I) Zf ket(u)
+     = (2ket{v}bra{v}-I) ket{- ci Sum xi - cj xj + Sum ck xk}
+     = 2 (- (ci * |xi| / sqrt{N}) - cj / sqrt{N} + Sum {ck/sqrt{N}}{for all xk}) ket{v} - ket{- ci Sum xi - cj xj + Sum ck xk}
+
+# a = - (ci * |xi| / sqrt{N}) - cj / sqrt{N} + Sum {ck/sqrt{N}}{for all xk}
+     =-(0.0901*3 / sqrt{2^8}) - 0.0541/sqrt{2^8} + 14.7586/sqrt{2^8}
+    = 0.9021
+
+    = 2 a ket{v} - ket{- ci Sum xi - cj xj + Sum ck xk}
+  = (2a/sqrt{N} + ci) Sum xi + (2a/sqrt{N} + cj)xj + (Sum (2a/sqrt{N} - ck) xk)
+ = (0.1127 + 0.0901)^2 * 3+ (0.1127 + 0.0541)^2
+=0.1233 + 0.02815 = 0.1514
+
+
+
+###############################################################################################################
+
+G{u} = (2{v}{v} - I) Zf {u}
+G^6 {u} = ((2VV - I) Zf)^6 U
+
+U = diag(c1, ... c_N)
+Zf = diag(1,1,1, -1, ..., -1, ..., -1 ,..., -1, ... ,1)
+I = diag(1..)
+VV = diag(1/N, ..., N times)
+
+
+
+G{u0, u1} = (2{v}{v} - I) Zf ({u0}+{u1})
+ ((2{v}{v} - I) Zf)**k {u0} -> 0
+
+
+AFTER 1 Iteration:
+138+158+147+108 = 551/4096 = 0.1345
+
+Algebraic:
+.1668^2 + 3*(.2028)^2 = 0.1512
+
+AFTER 2 iter:
+388+375+404+295 = 1462/4096 = 0.3569
+
+
+AFTER 6 Iterations:
+926+962+930+783 = 3601/4096=0.8791
+
+
+
+##################
+
+Replace uniform mix with u
+Create v, V0 non sol and V1 sol
+Add argmin t equation => t = argmin 0.5 * norm((G^t + Zf G^t) \ket{v})^2
+Add Graph to show cyclic behaviour as seen in Grover Search 
+
+
+
+x6 = 
